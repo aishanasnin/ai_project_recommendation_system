@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0a192f;
+    color: white;
+    text-align: center;
+}
+
+/* Fade In */
+.card {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1;}
+}
+
+/* Main Card */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    width: 550px;
+    margin: 50px auto;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+}
+
+/* Sections */
+.section {
+    background: #112240;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Highlight Title */
+h2 {
+    color: cyan;
+}
+
+/* Button */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, cyan, blue);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>🎯 {{ result }}</h2>
+
+<div class="section">💡 {{ reason }}</div>
+<div class="section">📊 Confidence: {{ confidence }}</div>
+<div class="section">⚡ Difficulty: {{ difficulty }}</div>
+<div class="section">📉 {{ gap }}</div>
+<div class="section">📚 {{ learning }}</div>
+
+<div class="section">
+🔁 Other Suggestions:
+<ul>
+{% for p in extra_projects %}
+<li>{{ p }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<!-- Uploaded Files -->
+{% if resume %}
+<div class="section">📄 Resume Uploaded: {{ resume }}</div>
+{% endif %}
+
+{% if certificate %}
+<div class="section">📜 Certificate Uploaded: {{ certificate }}</div>
+{% endif %}
+
+<a href="/">⬅ Try Again</a>
+
+</div>
+
+</body>
+</html>

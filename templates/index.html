@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Career Assistant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0a192f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Fade Animation */
+.container {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1;}
+}
+
+/* Glass Card */
+.container {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    width: 380px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+}
+
+/* Typing Title */
+h2 {
+    text-align: center;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards;
+}
+
+@keyframes typing {
+    to { width: 100%; }
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #112240;
+    color: white;
+}
+
+/* Glow */
+input:focus {
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, cyan, blue);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚀 AI Career Assistant</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="text" name="interest" placeholder="Enter Your Interest " required>
+<input type="text" name="skill" placeholder="Skill Level (Beginner/Intermediate/Advanced)" required>
+<input type="text" name="language" placeholder="Language" required>
+<input type="text" name="cert" placeholder="Certification (Yes/No)" required>
+
+<!-- Upload Section -->
+<div class="upload-box">
+
+<label>📄 Resume</label>
+<input type="file" name="resume">
+
+<label>📜 Certificate</label>
+<input type="file" name="certificate">
+
+<button type="submit">✨ Generate Recommendation</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
